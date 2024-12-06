@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+    overflow : hidden;
+}
+
+@keyframes circle{
+    0%{
+        width: 100%;
+        height: 100%;
+    }
+    80%{
+        width: 50px;
+        height: 50px;
+    }
+    100%{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-inline: 20px;
+    }
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes remove{
+    0%{
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+    100%{
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes shake{
+    0%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateX(5px);
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes dissapear{
+    0%{
+        opacity: 1;
+    }
+    99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+.loader-parent {
+    animation-name: shake;
+    animation-duration: 0.1s;
+    animation-iteration-count: 15;
+    animation-delay: 3.4s;
+}
+.loader-parent > div{
+    z-index: 1;
+    position: relative;
+    animation-name: appear  , circle;
+    animation-duration: 0.8s  , 0.5s;
+    animation-delay: 0s  , 0.8s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+
+.loader-parent > div::before{
+    content: "";
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+    background-color: inherit;
+    border-radius: 100%;
+    z-index: -1;
+    filter: blur(10px);
+    animation-name: appear;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+    animation-delay: 1.3s;
+}
+.loader-parent > div:nth-child(1):before{
+    animation-delay: 1.3s;
+}
+.loader-parent > div:nth-child(2):before{
+    animation-delay: 1.6s;
+}
+.loader-parent > div:nth-child(3):before{
+    animation-delay: 1.9s;
+}
+.loader-parent > div:nth-child(4):before{
+    animation-delay: 2.2s;
+}
+.loader-parent > div:nth-child(5):before{
+    animation-delay: 2.5s;
+}
+.loader-parent > div:nth-child(6):before{
+    animation-delay: 2.8s;
+}
+.loader-parent > div:nth-child(7):before{
+    animation-delay: 3.1s;
+}
+
+.loader-parent > div:nth-child(1){
+    animation-name: appear  , circle, remove;
+    animation-duration: 0.8s  , 0.5s , 0.3s;
+    animation-delay: 0s  , 0.8s , 3.4s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+.loader-parent > div:nth-child(2){
+    animation-name: appear  , circle, remove;
+    animation-duration: 0.8s  , 0.5s , 0.3s;
+    animation-delay: 0s  , 0.8s , 3.7s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+.loader-parent > div:nth-child(3){
+    animation-name: appear  , circle, remove;
+    animation-duration: 0.8s  , 0.5s , 0.3s;
+    animation-delay: 0s  , 0.8s , 4s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+.loader-parent > div:nth-child(4){
+    animation-name: appear  , circle, remove;
+    animation-duration: 0.8s  , 0.5s , 0.3s;
+    animation-delay: 0s  , 0.8s , 4.3s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+.loader-parent > div:nth-child(5){
+    animation-name: appear  , circle, remove;
+    animation-duration: 0.8s  , 0.5s , 0.3s;
+    animation-delay: 0s  , 0.8s , 4.6s;
+    animation-iteration-count: 1 , 1;
+    animation-direction: alternate , normal;
+    animation-fill-mode: forwards , forwards;
+    animation-timing-function: ease-out;
+}
+@keyframes purplee{
+    0%{
+        height: unset;
+        aspect-ratio: 1;
+        scale :1;
+    }
+    20%{
+        transform: translatex(-45px) scale(2);
+        background-color: #663399;
+    }
+    60%{
+        transform: translatex(-45px) scale(2);
+        background-color: #663399;
+    }
+    100%{
+        transform: translatex(-45px) scale(35);
+        background-color: rgb(165, 165, 165);
+    }
+}
+
+@keyframes purplee2{
+    0%{
+        height: unset;
+        aspect-ratio: 1;
+        scale :1;
+    }
+    20%{
+        transform: translatex(45px) scale(2);
+        background-color: #663399;
+    }
+    60%{
+        transform: translatex(45px) scale(2);
+        background-color: #663399;
+    }
+    100%{
+        transform: translatex(45px) scale(35);
+        background-color: rgb(165, 165, 165);
+    }
+}
+.loader-parent > div:nth-child(7) {
+    animation-name: appear  , circle , purplee;
+    animation-duration: 0.8s  , 0.5s , 1s;
+    animation-delay: 0s  , 0.8s , 10s;
+    animation-iteration-count: 1 , 1 , 1;
+}
+.loader-parent > div:nth-child(6){
+    animation-name: appear  , circle , purplee2;
+    animation-duration: 0.8s  , 0.5s , 1s;
+    animation-delay: 0s  , 0.8s , 10s;
+    animation-iteration-count: 1 , 1 , 1;
+}
+.loader-parent {
+    animation-name: shake , rotate;
+    animation-duration: 0.1s , 0.8s;
+    animation-iteration-count: 15 , infinite;
+    animation-delay: 3.4s , 5.5s ;
+    animation-timing-function: linear;
+}
+.loader{
+    position: absolute;
+    top: 0px;
+    background-color: black;
+    animation-delay:  11s;
+    animation-name: dissapear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes appear2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+.thegoat{
+    animation-name: appear2;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    animation-duration: 10s;
+}
+.te{
+    color: #663399;
+    background-color: rgba(0, 0, 0, 0.753);
+}
