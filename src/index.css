@@ -189,7 +189,7 @@ body{
         background-color: #663399;
     }
     100%{
-        transform: translatex(-45px) scale(35);
+        transform: translatex(-45px) scale(4);
         background-color: rgb(165, 165, 165);
     }
 }
